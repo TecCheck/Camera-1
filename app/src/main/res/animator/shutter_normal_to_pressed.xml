@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:duration="0"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        android:propertyName="strokeWidth"
+        android:startOffset="0"
+        android:valueFrom="0"
+        android:valueTo="9"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:duration="100"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        android:propertyName="pathData"
+        android:valueFrom="M 46.5 32 C 46.5 34.545 45.83 37.046 44.557 39.25 C 43.285 41.454 41.454 43.285 39.25 44.557 C 37.046 45.83 34.545 46.5 32 46.5 C 29.455 46.5 26.954 45.83 24.75 44.557 C 22.546 43.285 20.715 41.454 19.443 39.25 C 18.17 37.046 17.5 34.545 17.5 32 C 17.5 29.455 18.17 26.954 19.443 24.75 C 20.715 22.546 22.546 20.715 24.75 19.443 C 26.954 18.17 29.455 17.5 32 17.5 C 34.545 17.5 37.046 18.17 39.25 19.443 C 41.454 20.715 43.285 22.546 44.557 24.75 C 45.83 26.954 46.5 29.455 46.5 32 Z"
+        android:valueTo="M 55.5 32 C 55.5 36.125 54.414 40.178 52.352 43.75 C 50.289 47.322 47.322 50.289 43.75 52.352 C 40.178 54.414 36.125 55.5 32 55.5 C 27.875 55.5 23.822 54.414 20.25 52.352 C 16.678 50.289 13.711 47.322 11.648 43.75 C 9.586 40.178 8.5 36.125 8.5 32 C 8.5 27.875 9.586 23.822 11.648 20.25 C 13.711 16.678 16.678 13.711 20.25 11.648 C 23.822 9.586 27.875 8.5 32 8.5 C 36.125 8.5 40.178 9.586 43.75 11.648 C 47.322 13.711 50.289 16.678 52.352 20.25 C 54.414 23.822 55.5 27.875 55.5 32 Z"
+        android:valueType="pathType" />
+</set>

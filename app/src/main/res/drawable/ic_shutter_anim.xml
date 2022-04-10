@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/video_pressed"
+        android:drawable="@drawable/ic_shutter_video_pressed"
+        android:state_pressed="true"
+        app:state_video="true" />
+
+    <item
+        android:id="@+id/video"
+        android:drawable="@drawable/ic_shutter_video_normal"
+        app:state_video="true" />
+
+    <item
+        android:id="@+id/photo_pressed"
+        android:drawable="@drawable/ic_shutter_photo_pressed"
+        android:state_pressed="true" />
+
+    <item
+        android:id="@+id/photo"
+        android:drawable="@drawable/ic_shutter_photo_normal" />
+
+    <!-- Photo normal -> pressed -->
+    <transition
+        android:fromId="@id/photo"
+        android:toId="@id/photo_pressed">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_photo">
+                <target
+                    android:name="pressed"
+                    android:animation="@animator/shutter_normal_to_pressed" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- Photo pressed -> normal -->
+    <transition
+        android:fromId="@id/photo_pressed"
+        android:toId="@id/photo">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_photo">
+                <target
+                    android:name="pressed"
+                    android:animation="@animator/shutter_pressed_to_normal" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- Photo <-> Video -->
+    <transition
+        android:fromId="@id/photo"
+        android:toId="@id/video">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_photo">
+                <target android:name="background">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="300"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="fillColor"
+                            android:valueFrom="#cdd4d8"
+                            android:valueTo="#b71c1c"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+                <target android:name="inner">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="300"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="fillColor"
+                            android:valueFrom="#ffffff"
+                            android:valueTo="#e2231a"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <transition
+        android:fromId="@id/video"
+        android:toId="@id/photo">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_photo">
+                <target android:name="background">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="300"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="fillColor"
+                            android:valueFrom="#b71c1c"
+                            android:valueTo="#cdd4d8"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+                <target android:name="inner">
+                    <aapt:attr name="android:animation">
+                        <objectAnimator
+                            android:duration="300"
+                            android:interpolator="@android:interpolator/fast_out_slow_in"
+                            android:propertyName="fillColor"
+                            android:valueFrom="#e2231a"
+                            android:valueTo="#ffffff"
+                            android:valueType="colorType" />
+                    </aapt:attr>
+                </target>
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- Video normal -> pressed -->
+    <transition
+        android:fromId="@id/video"
+        android:toId="@id/video_pressed">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_video">
+                <target
+                    android:name="pressed"
+                    android:animation="@animator/shutter_normal_to_pressed" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+    <!-- Video pressed -> normal -->
+    <transition
+        android:fromId="@id/video_pressed"
+        android:toId="@id/video">
+        <aapt:attr name="android:drawable">
+            <animated-vector android:drawable="@drawable/ic_shutter_anim_base_video">
+                <target
+                    android:name="pressed"
+                    android:animation="@animator/shutter_pressed_to_normal" />
+            </animated-vector>
+        </aapt:attr>
+    </transition>
+
+</animated-selector>

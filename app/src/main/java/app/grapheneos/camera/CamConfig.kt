@@ -49,6 +49,7 @@ import androidx.camera.video.Quality
 import app.grapheneos.camera.ui.activities.CaptureActivity
 import app.grapheneos.camera.ui.activities.MainActivity.Companion.camConfig
 import androidx.documentfile.provider.DocumentFile
+import java.util.Arrays
 
 // work around https://issuetracker.google.com/issues/222726805
 private fun ExtensionsManager.isExtensionAvailableSafe(
@@ -156,6 +157,9 @@ class CamConfig(private val mActivity: MainActivity) {
 
     companion object {
         private const val TAG = "CamConfig"
+
+        private val STATE_VIDEO = intArrayOf(R.attr.state_video, -R.attr.state_photo)
+        private val STATE_PHOTO = intArrayOf(R.attr.state_photo, -R.attr.state_video)
 
         private const val PREVIEW_SNAP_DURATION = 200L
         private const val PREVIEW_SL_OVERLAY_DUR = 200L
@@ -1507,6 +1511,7 @@ class CamConfig(private val mActivity: MainActivity) {
     }
 
     fun switchMode(modeText: Int) {
+        val wasQRMode = this.modeText == CameraModes.QR_SCAN
 
         if (this.modeText == modeText) return
 
@@ -1552,14 +1557,21 @@ class CamConfig(private val mActivity: MainActivity) {
 
             mActivity.qrScanToggles.visibility = View.GONE
 
-            mActivity.captureButton.setBackgroundResource(R.drawable.cbutton_bg)
+            //mActivity.captureButton.setBackgroundResource(R.drawable.cbutton_bg)
+
+            if (wasQRMode)
+                mActivity.captureButton.setImageResource(R.drawable.ic_shutter_anim)
 
             if (isVideoMode) {
-                mActivity.captureButton.setImageResource(R.drawable.recording)
+                mActivity.captureButton.setImageState(STATE_VIDEO, true)
             } else {
-                mActivity.captureButton.setImageResource(R.drawable.camera_shutter)
+                mActivity.captureButton.setImageState(STATE_PHOTO, true)
                 mActivity.micOffIcon.visibility = View.GONE
             }
+
+            Log.d("CamConfig",
+                "$isVideoMode : ${mActivity.captureButton.drawableState.toTypedArray().contentDeepToString()}"
+            )
         }
 
         mActivity.cbText.visibility = if (isVideoMode || mActivity.timerDuration == 0) {

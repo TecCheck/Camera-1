@@ -1,10 +1,8 @@
 package app.grapheneos.camera.capturer
 
 import android.Manifest
-import android.animation.ValueAnimator
 import android.content.ContentValues
 import android.content.pm.PackageManager
-import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
@@ -265,6 +263,7 @@ class VideoCapturer(private val mActivity: MainActivity) {
         // mActivity.micOffIcon.visibility = View.GONE
         camConfig.mPlayer.playVRStartSound()
 
+        /*
         val gd: GradientDrawable = mActivity.captureButton.drawable as GradientDrawable
 
         val animator = ValueAnimator.ofFloat(dp16, dp8)
@@ -276,6 +275,7 @@ class VideoCapturer(private val mActivity: MainActivity) {
             }
 
         animator.start()
+        */
 
         mActivity.settingsDialog.includeAudioToggle.isEnabled = false
         mActivity.settingsDialog.videoQualitySpinner.isEnabled = false
@@ -291,7 +291,7 @@ class VideoCapturer(private val mActivity: MainActivity) {
         mActivity.settingsDialog.lRadio.isEnabled = false
         mActivity.settingsDialog.qRadio.isEnabled = false
 
-        mActivity.thirdCircle.setImageResource(R.drawable.camera_shutter)
+        mActivity.thirdCircle.setImageResource(R.drawable.ic_shutter_anim)
         mActivity.tabLayout.visibility = View.INVISIBLE
         mActivity.timerView.setText(R.string.start_value_timer)
         mActivity.timerView.visibility = View.VISIBLE
@@ -300,6 +300,7 @@ class VideoCapturer(private val mActivity: MainActivity) {
 
     private fun afterRecordingStops() {
 
+        /*
         val gd: GradientDrawable = mActivity.captureButton.drawable as GradientDrawable
 
         val animator = ValueAnimator.ofFloat(dp8, dp16)
@@ -311,6 +312,7 @@ class VideoCapturer(private val mActivity: MainActivity) {
             }
 
         animator.start()
+        */
 
         mActivity.timerView.visibility = View.GONE
         mActivity.flipCamIcon.setImageResource(R.drawable.flip_camera)
