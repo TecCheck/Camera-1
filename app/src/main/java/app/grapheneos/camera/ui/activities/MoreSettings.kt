@@ -65,13 +65,9 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
             val dPath = cleanPath(path)
             sLField.setText(dPath)
 
-            showMessage("Storage location successfully updated to $dPath")
-
+            showMessage(getString(R.string.storage_location_set, dPath))
         } else {
-            showMessage(
-                "No directory was selected by" +
-                        " the picker"
-            )
+            showMessage(getString(R.string.storage_location_not_set))
         }
     }
 
@@ -117,7 +113,12 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
 
         sLField.setOnClickListener {
             val i = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
-            dirPickerHandler.launch(Intent.createChooser(i, "Choose storage location"))
+            dirPickerHandler.launch(
+                Intent.createChooser(
+                    i,
+                    getString(R.string.title_choose_storage_location)
+                )
+            )
         }
 
         snackBar = Snackbar.make(
@@ -130,29 +131,21 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
         rSLocation.setOnClickListener {
 
             val dialog = AlertDialog.Builder(this)
-
-            dialog.setTitle("Are you sure?")
-
-            dialog.setMessage("Do you want to revert back to the default directory?")
-
-            dialog.setPositiveButton("Yes") { _, _ ->
+            dialog.setTitle(R.string.revert_back_to_dcim_dialog_title)
+            dialog.setMessage(R.string.revert_back_to_dcim_dialog_message)
+            dialog.setPositiveButton(android.R.string.ok) { _, _ ->
                 val path = "DCIM/Camera"
                 sLField.setText(path)
 
                 if (camConfig.storageLocation.isNotEmpty()) {
-                    showMessage(
-                        "Switched back to the default storage location"
-                    )
-
+                    showMessage(getString(R.string.revert_back_to_dcim_done))
                     camConfig.storageLocation = ""
                 } else {
-                    showMessage(
-                        "Already using the default storage location"
-                    )
+                    showMessage(getString(R.string.revert_back_to_dcim_already_done))
                 }
             }
 
-            dialog.setNegativeButton("No", null)
+            dialog.setNegativeButton(android.R.string.cancel, null)
             dialog.show()
         }
 
@@ -186,7 +179,11 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
                 pQField.setText(camConfig.photoQuality.toString())
             } else {
                 showMessage(
-                    "Photo quality can only be between ${NumInputFilter.min} and ${NumInputFilter.max}"
+                    getString(
+                        R.string.message_image_quality_min_max,
+                        NumInputFilter.min,
+                        NumInputFilter.max
+                    )
                 )
             }
         }
@@ -200,9 +197,7 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
                     pQField.setText(camConfig.photoQuality.toString())
                 } else {
                     pQField.setText("")
-                    showMessage(
-                        "Photo quality was set to auto mode"
-                    )
+                    showMessage(getString(R.string.message_photo_quality_auto))
                 }
             }
         }
@@ -213,10 +208,7 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
 
         exifToggleSetting.setOnClickListener {
             if (camConfig.isInCaptureMode) {
-                showMessage(
-                    "Images taken in this mode don't contain" +
-                            "extra EXIF data"
-                )
+                showMessage(getString(R.string.message_no_exif_data))
             } else {
                 exifToggle.performClick()
             }
@@ -287,9 +279,7 @@ class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
         if (pQField.text.isEmpty()) {
             camConfig.photoQuality = 0
 
-            showMessage(
-                "Photo quality was set to auto mode"
-            )
+            showMessage(getString(R.string.message_photo_quality_auto))
         } else {
             try {
 

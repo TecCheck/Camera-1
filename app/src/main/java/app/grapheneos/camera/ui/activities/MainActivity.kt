@@ -13,9 +13,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.ContentObserver
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.graphics.Point
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -363,10 +361,7 @@ open class MainActivity : AppCompatActivity(),
     protected open fun openGallery() {
 
         if (camConfig.latestMediaFile == null) {
-            showMessage(
-                "Please capture a photo/video before trying to view" +
-                        " them."
-            )
+            showMessage(getString(R.string.message_open_empty_gallery))
             return
         }
 
@@ -675,10 +670,7 @@ open class MainActivity : AppCompatActivity(),
                 imageCapturer.takePicture()
             } else {
                 if (imageCapturer.isTakingPicture) {
-                    showMessage(
-                        "Please wait for the image to get captured " +
-                                "before trying to open the gallery."
-                    )
+                    showMessage(getString(R.string.message_wait_for_capture))
                 } else {
                     openGallery()
                 }
@@ -691,10 +683,7 @@ open class MainActivity : AppCompatActivity(),
                 imageCapturer.takePicture()
             } else {
                 if (imageCapturer.isTakingPicture) {
-                    showMessage(
-                        "Please wait for the image to get " +
-                                "captured before attempting to share via long tap"
-                    )
+                    showMessage(getString(R.string.message_wait_for_capture))
                 } else {
                     shareLatestMedia()
                 }
@@ -1043,9 +1032,7 @@ open class MainActivity : AppCompatActivity(),
         val mediaUri = camConfig.latestUri
 
         if (mediaUri == null) {
-            showMessage(
-                "Please capture a photo/video before attempting to share via long tap"
-            )
+            showMessage(getString(R.string.message_share_empty_gallery))
             return
         }
 
