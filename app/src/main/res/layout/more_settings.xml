@@ -16,12 +16,12 @@
         android:paddingTop="?actionBarSize">
 
         <TextView
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="72dp"
             android:text="@string/general"
             android:textColor="?android:colorAccent"
-            android:layout_marginStart="68dp"
-            android:layout_marginVertical="12dp"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -30,37 +30,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:focusable="true"
             android:clickable="true"
+            android:focusable="true"
             android:orientation="horizontal"
+            android:paddingStart="16dp"
             android:paddingTop="8dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="6dp" >
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/gyroscope_setting_icon"
-                android:src="@drawable/straighten"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/save_image_as_previewed"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp" />
+                android:src="@drawable/straighten" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="4dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/gyroscope_setting_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gyroscope_suggestions"
-                    android:layout_marginStart="10dp"
                     android:paddingBottom="2dp"
+                    android:text="@string/gyroscope_suggestions"
                     android:textColor="?android:textColorPrimary"
                     android:textSize="16sp" />
 
@@ -69,7 +67,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/gyroscope_setting_desc"
-                    android:paddingStart="10dp"
                     android:textSize="14sp"
                     tools:ignore="RtlSymmetry" />
 
@@ -85,12 +82,12 @@
         </LinearLayout>
 
         <TextView
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="72dp"
             android:text="@string/photo"
             android:textColor="?android:colorAccent"
-            android:layout_marginStart="68dp"
-            android:layout_marginVertical="12dp"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -98,38 +95,36 @@
             android:id="@+id/save_image_as_preview_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:paddingTop="8dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="6dp"
             android:clickable="true"
-            android:focusable="true" >
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/save_image_as_preview_icon"
-                android:src="@drawable/selfie_preview"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/save_image_as_previewed"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp" />
+                android:src="@drawable/selfie_preview" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="4dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/save_image_as_preview_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/save_image_as_previewed"
-                    android:layout_marginStart="10dp"
                     android:paddingBottom="2dp"
+                    android:text="@string/save_image_as_previewed"
                     android:textColor="?android:textColorPrimary"
                     android:textSize="16sp" />
 
@@ -138,7 +133,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/save_as_image_preview_desc"
-                    android:paddingStart="10dp"
                     android:textSize="14sp"
                     tools:ignore="RtlSymmetry" />
 
@@ -157,38 +151,36 @@
             android:id="@+id/photo_quality_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:paddingTop="8dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="6dp"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/photo_quality_icon"
-                android:src="@drawable/image_quality"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/image_quality"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp" />
+                android:src="@drawable/image_quality" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="4dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/photo_quality_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/image_quality"
-                    android:layout_marginStart="10dp"
                     android:paddingBottom="2dp"
+                    android:text="@string/image_quality"
                     android:textColor="?android:textColorPrimary"
                     android:textSize="16sp" />
 
@@ -197,7 +189,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/image_quality_desc"
-                    android:paddingStart="10dp"
                     android:textSize="14sp"
                     tools:ignore="RtlSymmetry" />
 
@@ -210,58 +201,57 @@
 
                 <ImageView
                     android:id="@+id/decrease_photo_quality"
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/remove"
-                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_gravity="center"
-                    android:contentDescription="@string/decrease_quality" />
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/decrease_quality"
+                    android:src="@drawable/remove"
+                    android:visibility="gone" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    app:boxBackgroundMode="none"
                     android:clickable="true"
-                    android:focusableInTouchMode="true">
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    app:boxBackgroundMode="none">
 
                     <EditText
                         android:id="@+id/photo_quality"
-                        android:layout_width="36dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:paddingTop="15dp"
-                        android:textSize="16sp"
-                        android:maxLength="3"
-                        android:labelFor="@id/photo_quality_setting"
-                        android:textAlignment="center"
                         android:layout_gravity="center"
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="number"
-                        android:imeOptions="actionDone" />
+                        android:labelFor="@id/photo_quality_setting"
+                        android:maxLength="3"
+                        android:paddingTop="15dp"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/percent_symbol"
-                    android:textSize="16sp"
-                    android:paddingTop="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="4dp" />
+                    android:layout_marginEnd="4dp"
+                    android:paddingTop="16dp"
+                    android:text="@string/percent_symbol"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/increase_photo_quality"
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/add"
-                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_gravity="center"
-                    android:contentDescription="@string/increase_quality" />
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/increase_quality"
+                    android:src="@drawable/add"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -271,38 +261,36 @@
             android:id="@+id/remove_exif_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:paddingTop="8dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="6dp"
             android:clickable="true"
-            android:focusable="true" >
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/remove_exif_icon"
-                android:src="@drawable/info_adaptable"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/save_image_as_previewed"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp" />
+                android:src="@drawable/info_adaptable" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="4dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/remove_exif_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/remove_exif_title"
-                    android:layout_marginStart="10dp"
                     android:paddingBottom="2dp"
+                    android:text="@string/remove_exif_title"
                     android:textColor="?android:textColorPrimary"
                     android:textSize="16sp" />
 
@@ -311,7 +299,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/remove_exif_subtitle"
-                    android:paddingStart="10dp"
                     android:textSize="14sp"
                     tools:ignore="RtlSymmetry" />
 
@@ -327,12 +314,12 @@
         </LinearLayout>
 
         <TextView
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="72dp"
             android:text="@string/storage"
             android:textColor="?android:colorAccent"
-            android:layout_marginStart="68dp"
-            android:layout_marginVertical="12dp"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -341,28 +328,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:focusable="true"
             android:clickable="true"
+            android:focusable="true"
             android:orientation="horizontal"
+            android:paddingStart="16dp"
             android:paddingTop="8dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="6dp" >
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
 
             <ImageView
                 android:id="@+id/storage_location_icon"
-                android:src="@drawable/storage"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/save_image_as_previewed"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp" />
+                android:src="@drawable/storage" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="4dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -370,7 +356,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/storage_location"
-                    android:layout_marginStart="10dp"
                     android:textColor="?android:textColorPrimary"
                     android:textSize="16sp" />
 
@@ -380,28 +365,30 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:layout_weight="1"
                         android:id="@+id/storage_location_field"
-                        android:hint="@string/storage_location"
                         android:layout_width="0dp"
-                        android:cursorVisible="false"
                         android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="0dp"
-                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:cursorVisible="false"
                         android:drawableStart="@drawable/folder"
                         android:drawablePadding="6dp"
+                        android:focusable="false"
+                        android:hint="@string/storage_location"
                         android:importantForAutofill="no"
-                        android:inputType="textNoSuggestions" />
+                        android:inputType="textNoSuggestions"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:textSize="14sp" />
 
                     <ImageButton
                         android:id="@+id/refresh_storage_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/refresh"
                         android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/revert_back_to_dcim"/>
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/revert_back_to_dcim"
+                        android:padding="8dp"
+                        android:src="@drawable/refresh" />
 
                 </LinearLayout>
 

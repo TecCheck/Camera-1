@@ -20,6 +20,7 @@
     </style>
 
     <style name="OverlayActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorAccent">@color/selected_option_bg</item>
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowActionBar">true</item>
